@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dummydatagen"
+version = "0.1.0"
+description = "기존 SQLite 스키마를 읽어 Faker 기반 더미 데이터를 생성/삽입하는 CLI 툴"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "Faker>=20.0.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0.0",
+]
+
+[project.scripts]
+dummydatagen = "dummydatagen.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["dummydatagen*"]
